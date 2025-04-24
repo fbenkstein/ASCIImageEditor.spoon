@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="editor.css">
+    <style>
+        .toolbar button img {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+    </style>
+    <script defer src="editor.js"></script>
+</head>
+<body>
+    <div class="editor-container">
+        <div class="editor-section">
+            <h3>Image</h3>
+            <div class="toolbar">
+                <button title="Insert Column" onclick="insertColumn()"><img src="images/insert-column.png" alt="Insert Column"></button>
+                <button title="Delete Column" onclick="deleteColumn()"><img src="images/delete-column.png" alt="Delete Column"></button>
+                <span class="separator">|</span>
+                <button title="Insert Row" onclick="insertRow()"><img src="images/add-row.png" alt="Insert Row"></button>
+                <button title="Delete Row" onclick="deleteRow()"><img src="images/delete-row.png" alt="Delete Row"></button>
+                <span class="separator">|</span>
+                <button title="Make Rectangular" onclick="makeRectangular()">□</button>
+                <span class="separator">|</span>
+                <button title="Add Frame" onclick="addFrame()">+⃞</button>
+                <button title="Delete Frame" onclick="deleteFrame()">-⃞</button>
+            </div>
+            <textarea id="ascii-editor"></textarea>
+            <h3>Context</h3>
+            <textarea id="context-editor"></textarea>
+        </div>
+        <div class="editor-section">
+            <h3>Preview</h3>
+            <div class="toolbar">
+                <button title="Add to Menubar" onclick="toggleMenubarIcon()" id="menubar-button">⚙</button>
+                <span class="separator">|</span>
+                <button title="Show Notification" onclick="showNotification()">🔔</button>
+            </div>
+            <div id="preview-container"></div>
+        </div>
+    </div>
+</body>
+</html> 
