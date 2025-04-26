@@ -15,6 +15,10 @@ function which is based on the [ASCIImage](https://github.com/cparnot/ASCIImage)
 
 ![](screenshot.png)
 
+See the [tricky example](http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/#:~:text=Here%20is%20how%20the%20string%20is%20parsed%2C%20shape%20after%20shape%2C%20layer%20after%20layer:)
+from the [original blog post](http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/)
+for explanation of how the image is created.
+
 ## Installation
 
 1. Clone this repository to your Hammerspoon spoons directory:
