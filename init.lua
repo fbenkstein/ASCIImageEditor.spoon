@@ -1,3 +1,9 @@
+--- === ASCIImageEditor ===
+---
+--- An interactive editor for the ASCIImage format accepted by
+--- hs.image.imageFromASCII.
+---
+--- Download: [https://github.com/fbenkstein/ASCIImageEditor.spoon/archive/refs/heads/main.zip](https://github.com/fbenkstein/ASCIImageEditor.spoon/archive/refs/heads/main.zip)
 local obj = {}
 obj.__index = obj
 
@@ -181,8 +187,8 @@ end
 
 -- Private methods
 
---- createEditor()
---- Function
+--- ASCIImageEditor:createEditor()
+--- Method
 --- Create the editor window.
 ---
 --- Returns:
@@ -232,7 +238,7 @@ function obj:createEditor()
     self.editorWindow:url("file://" .. htmlPath)
 end
 
---- parseContext(contextData)
+--- ASCIImageEditor.parseContext(contextData)
 --- Function
 --- Parse the context data into a table. The context data is expected contain be
 --- a Lua table literal.
@@ -281,8 +287,8 @@ local function parseContext(contextData)
     return contextOrError
 end
 
---- makeCallback(callbackName)
---- Function
+--- ASCIImageEditor:makeCallback(callbackName)
+--- Method
 --- Make a callback function for the editor window.
 ---
 --- Parameters:
@@ -314,8 +320,8 @@ function obj:makeCallback(callbackName)
     end
 end
 
---- renderImages(request)
---- Function
+--- ASCIImageEditor:renderImages(request)
+--- Method
 --- Render the images from the ASCIImage content.
 ---
 --- Parameters:
@@ -411,8 +417,8 @@ function obj:renderImages(request)
     callback { images = imageRefs }
 end
 
---- showNotification(request)
---- Function
+--- ASCIImageEditor:showNotification(request)
+--- Method
 --- Show a notification with the current image.
 ---
 --- Parameters:

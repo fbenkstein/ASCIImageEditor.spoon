@@ -1,0 +1,570 @@
+[
+  {
+    "Constant" : [
+
+    ],
+    "submodules" : [
+
+    ],
+    "Function" : [
+      {
+        "doc" : "Parse the context data into a table. The context data is expected contain be\na Lua table literal.\n\nNote: it is not safe to call this function with untrusted data.\n\nParameters:\n * contextData - The context data to parse\n\nReturns:\n * The parsed context data or nil and an error message if the context data is invalid",
+        "stripped_doc" : [
+          "Parse the context data into a table. The context data is expected contain be",
+          "a Lua table literal.",
+          "",
+          "Note: it is not safe to call this function with untrusted data.",
+          ""
+        ],
+        "desc" : "Parse the context data into a table. The context data is expected contain be",
+        "def" : "ASCIImageEditor.parseContext(contextData)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor.parseContext(contextData)",
+        "type" : "Function",
+        "returns" : [
+          " * The parsed context data or nil and an error message if the context data is invalid"
+        ],
+        "name" : "parseContext",
+        "parameters" : [
+          " * contextData - The context data to parse",
+          ""
+        ]
+      }
+    ],
+    "Variable" : [
+
+    ],
+    "stripped_doc" : [
+
+    ],
+    "Deprecated" : [
+
+    ],
+    "type" : "Module",
+    "desc" : "An interactive editor for the ASCIImage format accepted by",
+    "Constructor" : [
+
+    ],
+    "items" : [
+      {
+        "doc" : "Parse the context data into a table. The context data is expected contain be\na Lua table literal.\n\nNote: it is not safe to call this function with untrusted data.\n\nParameters:\n * contextData - The context data to parse\n\nReturns:\n * The parsed context data or nil and an error message if the context data is invalid",
+        "stripped_doc" : [
+          "Parse the context data into a table. The context data is expected contain be",
+          "a Lua table literal.",
+          "",
+          "Note: it is not safe to call this function with untrusted data.",
+          ""
+        ],
+        "desc" : "Parse the context data into a table. The context data is expected contain be",
+        "def" : "ASCIImageEditor.parseContext(contextData)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor.parseContext(contextData)",
+        "type" : "Function",
+        "returns" : [
+          " * The parsed context data or nil and an error message if the context data is invalid"
+        ],
+        "name" : "parseContext",
+        "parameters" : [
+          " * contextData - The context data to parse",
+          ""
+        ]
+      },
+      {
+        "doc" : "Binds hotkeys for the ASCIImage editor\n\nParameters:\n * mapping - A table containing hotkey mappings\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Binds hotkeys for the ASCIImage editor",
+          ""
+        ],
+        "desc" : "Binds hotkeys for the ASCIImage editor",
+        "def" : "ASCIImageEditor:bindHotkeys(mapping)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:bindHotkeys(mapping)",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "bindHotkeys",
+        "parameters" : [
+          " * mapping - A table containing hotkey mappings",
+          ""
+        ]
+      },
+      {
+        "doc" : "Create the editor window.\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Create the editor window.",
+          ""
+        ],
+        "desc" : "Create the editor window.",
+        "def" : "ASCIImageEditor:createEditor()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:createEditor()",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "createEditor",
+        "parameters" : [
+
+        ]
+      },
+      {
+        "doc" : "Creates the necessary resources for the ASCIImage editor. This is meant to\nbe called during development only when changing the images.\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Creates the necessary resources for the ASCIImage editor. This is meant to",
+          "be called during development only when changing the images.",
+          ""
+        ],
+        "desc" : "Creates the necessary resources for the ASCIImage editor. This is meant to",
+        "def" : "ASCIImageEditor:createResources()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:createResources()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "createResources",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Hides the ASCIImage editor window\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Hides the ASCIImage editor window",
+          ""
+        ],
+        "desc" : "Hides the ASCIImage editor window",
+        "def" : "ASCIImageEditor:hide()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:hide()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "hide",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Initializes the ASCIImage editor with optional configuration\n\nParameters:\n * config - An optional table containing configuration options\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Initializes the ASCIImage editor with optional configuration",
+          ""
+        ],
+        "desc" : "Initializes the ASCIImage editor with optional configuration",
+        "def" : "ASCIImageEditor:init([config])",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:init([config])",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "init",
+        "parameters" : [
+          " * config - An optional table containing configuration options",
+          ""
+        ]
+      },
+      {
+        "doc" : "Make a callback function for the editor window.\n\nParameters:\n * callbackName - The name of the callback function\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Make a callback function for the editor window.",
+          ""
+        ],
+        "desc" : "Make a callback function for the editor window.",
+        "def" : "ASCIImageEditor:makeCallback(callbackName)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:makeCallback(callbackName)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "makeCallback",
+        "parameters" : [
+          " * callbackName - The name of the callback function",
+          ""
+        ]
+      },
+      {
+        "doc" : "Render the images from the ASCIImage content.\n\nParameters:\n * request - The request object\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Render the images from the ASCIImage content.",
+          ""
+        ],
+        "desc" : "Render the images from the ASCIImage content.",
+        "def" : "ASCIImageEditor:renderImages(request)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:renderImages(request)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "renderImages",
+        "parameters" : [
+          " * request - The request object",
+          ""
+        ]
+      },
+      {
+        "doc" : "Shows the ASCIImage editor window\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Shows the ASCIImage editor window",
+          ""
+        ],
+        "desc" : "Shows the ASCIImage editor window",
+        "def" : "ASCIImageEditor:show()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:show()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "show",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Show a notification with the current image.\n\nParameters:\n * request - The request object\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Show a notification with the current image.",
+          ""
+        ],
+        "desc" : "Show a notification with the current image.",
+        "def" : "ASCIImageEditor:showNotification(request)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:showNotification(request)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "showNotification",
+        "parameters" : [
+          " * request - The request object"
+        ]
+      },
+      {
+        "doc" : "Starts the ASCIImage editor background activities\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Starts the ASCIImage editor background activities",
+          ""
+        ],
+        "desc" : "Starts the ASCIImage editor background activities",
+        "def" : "ASCIImageEditor:start()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:start()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "start",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Stops the ASCIImage editor background activities\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Stops the ASCIImage editor background activities",
+          ""
+        ],
+        "desc" : "Stops the ASCIImage editor background activities",
+        "def" : "ASCIImageEditor:stop()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:stop()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "stop",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      }
+    ],
+    "Method" : [
+      {
+        "doc" : "Initializes the ASCIImage editor with optional configuration\n\nParameters:\n * config - An optional table containing configuration options\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Initializes the ASCIImage editor with optional configuration",
+          ""
+        ],
+        "desc" : "Initializes the ASCIImage editor with optional configuration",
+        "def" : "ASCIImageEditor:init([config])",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:init([config])",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "init",
+        "parameters" : [
+          " * config - An optional table containing configuration options",
+          ""
+        ]
+      },
+      {
+        "doc" : "Starts the ASCIImage editor background activities\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Starts the ASCIImage editor background activities",
+          ""
+        ],
+        "desc" : "Starts the ASCIImage editor background activities",
+        "def" : "ASCIImageEditor:start()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:start()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "start",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Stops the ASCIImage editor background activities\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Stops the ASCIImage editor background activities",
+          ""
+        ],
+        "desc" : "Stops the ASCIImage editor background activities",
+        "def" : "ASCIImageEditor:stop()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:stop()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "stop",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Binds hotkeys for the ASCIImage editor\n\nParameters:\n * mapping - A table containing hotkey mappings\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Binds hotkeys for the ASCIImage editor",
+          ""
+        ],
+        "desc" : "Binds hotkeys for the ASCIImage editor",
+        "def" : "ASCIImageEditor:bindHotkeys(mapping)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:bindHotkeys(mapping)",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "bindHotkeys",
+        "parameters" : [
+          " * mapping - A table containing hotkey mappings",
+          ""
+        ]
+      },
+      {
+        "doc" : "Shows the ASCIImage editor window\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Shows the ASCIImage editor window",
+          ""
+        ],
+        "desc" : "Shows the ASCIImage editor window",
+        "def" : "ASCIImageEditor:show()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:show()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "show",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Hides the ASCIImage editor window\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Hides the ASCIImage editor window",
+          ""
+        ],
+        "desc" : "Hides the ASCIImage editor window",
+        "def" : "ASCIImageEditor:hide()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:hide()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "hide",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Creates the necessary resources for the ASCIImage editor. This is meant to\nbe called during development only when changing the images.\n\nParameters:\n * None\n\nReturns:\n * The ASCIImageEditor object",
+        "stripped_doc" : [
+          "Creates the necessary resources for the ASCIImage editor. This is meant to",
+          "be called during development only when changing the images.",
+          ""
+        ],
+        "desc" : "Creates the necessary resources for the ASCIImage editor. This is meant to",
+        "def" : "ASCIImageEditor:createResources()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:createResources()",
+        "type" : "Method",
+        "returns" : [
+          " * The ASCIImageEditor object"
+        ],
+        "name" : "createResources",
+        "parameters" : [
+          " * None",
+          ""
+        ]
+      },
+      {
+        "doc" : "Create the editor window.\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Create the editor window.",
+          ""
+        ],
+        "desc" : "Create the editor window.",
+        "def" : "ASCIImageEditor:createEditor()",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:createEditor()",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "createEditor",
+        "parameters" : [
+
+        ]
+      },
+      {
+        "doc" : "Make a callback function for the editor window.\n\nParameters:\n * callbackName - The name of the callback function\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Make a callback function for the editor window.",
+          ""
+        ],
+        "desc" : "Make a callback function for the editor window.",
+        "def" : "ASCIImageEditor:makeCallback(callbackName)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:makeCallback(callbackName)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "makeCallback",
+        "parameters" : [
+          " * callbackName - The name of the callback function",
+          ""
+        ]
+      },
+      {
+        "doc" : "Render the images from the ASCIImage content.\n\nParameters:\n * request - The request object\n\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Render the images from the ASCIImage content.",
+          ""
+        ],
+        "desc" : "Render the images from the ASCIImage content.",
+        "def" : "ASCIImageEditor:renderImages(request)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:renderImages(request)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "renderImages",
+        "parameters" : [
+          " * request - The request object",
+          ""
+        ]
+      },
+      {
+        "doc" : "Show a notification with the current image.\n\nParameters:\n * request - The request object\nReturns:\n * Nothing",
+        "stripped_doc" : [
+          "Show a notification with the current image.",
+          ""
+        ],
+        "desc" : "Show a notification with the current image.",
+        "def" : "ASCIImageEditor:showNotification(request)",
+        "notes" : [
+
+        ],
+        "signature" : "ASCIImageEditor:showNotification(request)",
+        "type" : "Method",
+        "returns" : [
+          " * Nothing"
+        ],
+        "name" : "showNotification",
+        "parameters" : [
+          " * request - The request object"
+        ]
+      }
+    ],
+    "Command" : [
+
+    ],
+    "Field" : [
+
+    ],
+    "doc" : "An interactive editor for the ASCIImage format accepted by\nhs.image.imageFromASCII.\n\nDownload: [https:\/\/github.com\/fbenkstein\/ASCIImageEditor.spoon\/archive\/refs\/heads\/main.zip](https:\/\/github.com\/fbenkstein\/ASCIImageEditor.spoon\/archive\/refs\/heads\/main.zip)",
+    "name" : "ASCIImageEditor"
+  }
+]
