@@ -5,6 +5,12 @@ allows creating images using ASCII art using the
 [`hs.image.imageFromASCII`](https://www.hammerspoon.org/docs/hs.image.html#imageFromASCII)
 function which is based on the [ASCIImage](https://github.com/cparnot/ASCIImage) library.
 
+## Features
+
+* Live preview in different sizes
+* Preview of menubar icon
+* Preview of notification image
+
 ## Screenshot
 
 ![](screenshot.png)
