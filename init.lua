@@ -25,7 +25,7 @@ obj.description = "A Hammerspoon spoon that provides an editor for the ASCIImage
 local defaultConfig = {
     windowSize = {
         width = 800,
-        height = 600
+        height = 600,
     },
 }
 
@@ -127,7 +127,7 @@ function obj:show()
     self.editorWindow:bringToFront()
     self.editorWindow:hswindow():focus()
     self.editorWindow:level(hs.drawing.windowLevels.normal)
-    
+
     return self
 end
 
@@ -144,7 +144,7 @@ function obj:hide()
     if self.editorWindow then
         self.editorWindow:hide()
     end
-    
+
     return self
 end
 
@@ -199,39 +199,36 @@ function obj:createEditor()
     local width = windowSize.width or 800
     local height = windowSize.height or 600
 
-    self.editorWindow = hs.webview.new(
-        {
+    self.editorWindow = hs.webview
+        .new({
             x = 100,
             y = 100,
             w = width,
-            h = height
-        },
-        {
+            h = height,
+        }, {
             javaScriptEnabled = true,
             javaScriptCanOpenWindowsAutomatically = true,
             developerExtrasEnabled = true,
-        },
-        self.userContent
-    )
-    :windowStyle({
-        "closable",
-        "miniaturizable",
-        "nonactivating",
-        "resizable",
-        "texturedBackground",
-        "titled",
-    })
-    :windowTitle("ASCIImage Editor")
-    :allowGestures(true)
-    :allowNewWindows(true)
-    :allowTextEntry(true)
-    :transparent(false)
-    :deleteOnClose(true)
-    :windowCallback(function(action, webview)
-        if action == "closing" then
-            self.editorWindow = nil
-        end
-    end)
+        }, self.userContent)
+        :windowStyle({
+            "closable",
+            "miniaturizable",
+            "nonactivating",
+            "resizable",
+            "texturedBackground",
+            "titled",
+        })
+        :windowTitle("ASCIImage Editor")
+        :allowGestures(true)
+        :allowNewWindows(true)
+        :allowTextEntry(true)
+        :transparent(false)
+        :deleteOnClose(true)
+        :windowCallback(function(action, webview)
+            if action == "closing" then
+                self.editorWindow = nil
+            end
+        end)
 
     -- Load the editor HTML
     local htmlPath = hs.spoons.resourcePath("resources/editor.html")
@@ -310,13 +307,20 @@ function obj:makeCallback(callbackName)
             return
         end
 
-        self.editorWindow:evaluateJavaScript(string.format([[
+        self.editorWindow:evaluateJavaScript(
+            string.format(
+                [[
             %s(%s);
-        ]], callbackName, resultString), function(result, error)
-            if error and error.code ~= 0 then
-                hs.printf("Error from callback %s: %s", callbackName, hs.inspect.inspect(error))
+        ]],
+                callbackName,
+                resultString
+            ),
+            function(result, error)
+                if error and error.code ~= 0 then
+                    hs.printf("Error from callback %s: %s", callbackName, hs.inspect.inspect(error))
+                end
             end
-        end)
+        )
     end
 end
 
@@ -352,15 +356,11 @@ function obj:renderImages(request)
     end
 
     local contextJson = hs.json.encode(context or {})
-    local imageHash = hs.hash.new("SHA256")
-        :append(content)
-        :append(contextJson)
-        :finish()
-        :value()
+    local imageHash = hs.hash.new("SHA256"):append(content):append(contextJson):finish():value()
 
     -- Create the initial image.
     local img = image.imageFromASCII(content, context)
-    
+
     local size = img and img:size()
     if not size or size.w == 0 or size.h == 0 then
         -- Show error message if image creation failed
@@ -372,13 +372,13 @@ function obj:renderImages(request)
     -- send the sizes and paths to the callback.
     local imageRefs = {
         { size = size },
-        { size = {w = 48, h=48} },
-        { size = {w = 96, h=96} },
-        { size = {w = 128, h=128} },
-        { size = {w = 192, h=192} },
-        { size = {w = 256, h=256} },
+        { size = { w = 48, h = 48 } },
+        { size = { w = 96, h = 96 } },
+        { size = { w = 128, h = 128 } },
+        { size = { w = 192, h = 192 } },
+        { size = { w = 256, h = 256 } },
     }
-    
+
     for _, imageRef in ipairs(imageRefs) do
         local scaledImg
 
@@ -389,20 +389,14 @@ function obj:renderImages(request)
             scaledImg = img:setSize(imageRef.size, false)
         end
 
-        imageRef.path = string.format(
-            "%s/%s_%dx%d.png",
-            self.tmpdir,
-            imageHash,
-            imageRef.size.w,
-            imageRef.size.h
-        )
+        imageRef.path = string.format("%s/%s_%dx%d.png", self.tmpdir, imageHash, imageRef.size.w, imageRef.size.h)
 
         local scaledSize = scaledImg:size()
-        imageRef.size = {w = math.floor(scaledSize.w), h = math.floor(scaledSize.h)}
+        imageRef.size = { w = math.floor(scaledSize.w), h = math.floor(scaledSize.h) }
 
         scaledImg:saveToFile(imageRef.path)
     end
-    
+
     if request.enableMenubarIcon then
         if not self.menubarIcon then
             self.menubarIcon = menubar.new(true, "ASCIImageEditor")
@@ -430,9 +424,9 @@ function obj:showNotification(request)
     local contextData = request.context
     local notificationData = {
         autoWithdraw = true,
-        withdrawAfter = 5
+        withdrawAfter = 5,
     }
-    
+
     local context, error = parseContext(contextData)
     local img = context and image.imageFromASCII(content, context)
     local size = img and img:size()
@@ -451,11 +445,11 @@ function obj:showNotification(request)
         notificationData.subTitle = "Failed to render image"
         notificationData.informativeText = "The image could not be rendered. Please check your ASCIImage format."
     end
-    
+
     local notification = hs.notify.new(notificationData)
 
     notification:send()
     return self
 end
 
-return obj 
+return obj
